@@ -34,10 +34,10 @@
 <li><a href="#how-this-book-is-created"><span class="toc-section-number">1.1</span> How this book is created</a></li>
 </ul></li>
 <li><a href="#memory-vulnerability-based-attacks-and-mitigations"><span class="toc-section-number">2</span> Memory vulnerability based attacks and mitigations</a></li>
-<li><a href="#physical-access-side-channel-attacks"><span class="toc-section-number">3</span> Physical access side channel attacks</a></li>
-<li><a href="#remote-access-side-channel-attacks"><span class="toc-section-number">4</span> Remote access side channel attacks</a><ul>
+<li><a href="#physical-access-side-channel-attacks"><span class="toc-section-number">3</span> Physical access side-channel attacks</a></li>
+<li><a href="#remote-access-side-channel-attacks"><span class="toc-section-number">4</span> Remote access side-channel attacks</a><ul>
 <li><a href="#timing-attacks"><span class="toc-section-number">4.1</span> Timing attacks</a></li>
-<li><a href="#cache-side-channel-attacks"><span class="toc-section-number">4.2</span> Cache side channel attacks</a></li>
+<li><a href="#cache-side-channel-attacks"><span class="toc-section-number">4.2</span> Cache side-channel attacks</a></li>
 </ul></li>
 <li><a href="#other-security-topics-relevant-for-compiler-developers"><span class="toc-section-number">5</span> Other security topics relevant for compiler developers</a></li>
 <li><a href="#appendix-contribution-guidelines">Appendix: contribution guidelines</a></li>
@@ -50,7 +50,7 @@
 <p>Indeed, compared to a few decades ago, today’s compiler developer is much more likely to work on security features, at least some of their time.</p>
 <p>Furthermore, with the ever-expanding range of techniques implemented, it has become very hard to gain a basic understanding of all security features implemented in typical compilers.</p>
 <p>This poses a practical problem: compiler developers must be able to work on security hardening features, yet it is hard to gain a good basic understanding of such compiler features.</p>
-<p>This book aims to help developers of code generation tools such as JITs, compilers, linkers, assemblers, etc. overcome this.</p>
+<p>This book aims to help developers of code generation tools such as JITs, compilers, linkers and assemblers to overcome this.</p>
 <p>There is a lot of material that can be found explaining individual vulnerabilities or attack vectors. There are also lots of presentations explaining specific exploits. But there seems to be a limited set of material that gives a structured overview of all vulnerabilities and exploits for which a code generator could play a role in protecting against them.</p>
 <p>This book aims to provide such a structured, broad overview. It does not necessarily go into full details. Instead it aims to give a thorough description of all relevant high-level aspects of attacks, vulnerabilities, mitigations and hardening techniques. For further details, this book provides pointers to material with more details on specific techniques.</p>
 <p>The purpose of this book is to serve as a guide to every compiler developer that needs to learn about software security relevant to compilers. Even though the focus is on compiler developers, we expect that this book will also be useful to other people working on low-level software.</p>
@@ -64,10 +64,10 @@
 
 <h1 id="memory-vulnerability-based-attacks-and-mitigations"><span class="header-section-number">2</span> Memory vulnerability based attacks and mitigations</h1>
 
-<h1 id="physical-access-side-channel-attacks"><span class="header-section-number">3</span> Physical access side channel attacks</h1>
+<h1 id="physical-access-side-channel-attacks"><span class="header-section-number">3</span> Physical access side-channel attacks</h1>
 
-<h1 id="remote-access-side-channel-attacks"><span class="header-section-number">4</span> Remote access side channel attacks</h1>
-<p>This chapter covers side channel attacks for which the attacker does not need physical access to the hardware.</p>
+<h1 id="remote-access-side-channel-attacks"><span class="header-section-number">4</span> Remote access side-channel attacks</h1>
+<p>This chapter covers side-channel attacks for which the attacker does not need physical access to the hardware.</p>
 <h2 id="timing-attacks"><span class="header-section-number">4.1</span> Timing attacks</h2>
 <p>An implementation of a cryptographic algorithm can leak information about the data it processes if its run time is influenced by the value of the processed data. Attacks making use of this are called timing attacks.</p>
 <p>The main mitigation against such attacks consists of carefully implementing the algorithm such that the execution time remains independent of the processed data. This can be done by making sure that both:</p>
@@ -78,8 +78,8 @@
 <p>By ensuring that the extension is enabled and only instructions in the subset are used, data-independent execution time is guaranteed.</p></li>
 </ol>
 <p>At the moment, we do not know of a compiler implementation that actively helps to guarantee both (a) and (b). A great reference giving practical advice on how to achieve (a), (b) and more security hardening properties specific for cryptographic kernels is found in <span class="citation" data-cites="Pornin2018">(Pornin <a href="#ref-Pornin2018">2018</a>)</span>.</p>
-<p>As discussed in <span class="citation" data-cites="Pornin2018">(Pornin <a href="#ref-Pornin2018">2018</a>)</span>, when implementing cryptographic algorithms, you also need to keep cache side channel attacks in mind, which are discussed in the <a href="#cache-side-channel-attacks">section on cache side channel attacks</a>.</p>
-<h2 id="cache-side-channel-attacks"><span class="header-section-number">4.2</span> Cache side channel attacks</h2>
+<p>As discussed in <span class="citation" data-cites="Pornin2018">(Pornin <a href="#ref-Pornin2018">2018</a>)</span>, when implementing cryptographic algorithms, you also need to keep cache side-channel attacks in mind, which are discussed in the <a href="#cache-side-channel-attacks">section on cache side-channel attacks</a>.</p>
+<h2 id="cache-side-channel-attacks"><span class="header-section-number">4.2</span> Cache side-channel attacks</h2>
 
 <h1 id="other-security-topics-relevant-for-compiler-developers"><span class="header-section-number">5</span> Other security topics relevant for compiler developers</h1>
 
