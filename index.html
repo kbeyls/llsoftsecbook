@@ -26,48 +26,48 @@
 <p>
   © 2021 Arm Limited <a href="mailto:kristof.beyls@arm.com" class="email">kristof.beyls@arm.com</a><br />
 </p>
-<p>Version: 0-59-gad53177</p>
+<p>Version: 0-63-gb527fe5</p>
 
 </header>
 <nav id="TOC">
 <ul>
-<li><a href="#introduction"><span class="toc-section-number">1</span> Introduction</a><ul>
-<li><a href="#why-an-open-source-book"><span class="toc-section-number">1.1</span> Why an open source book?</a></li>
+<li><a href="#introduction"><span class="toc-section-number">1</span> Introduction <span>§</span></a><ul>
+<li><a href="#why-an-open-source-book"><span class="toc-section-number">1.1</span> Why an open source book? <span>§</span></a></li>
 </ul></li>
-<li><a href="#memory-vulnerability-based-attacks-and-mitigations"><span class="toc-section-number">2</span> Memory vulnerability based attacks and mitigations</a><ul>
-<li><a href="#a-bit-of-background-on-memory-vulnerabilities"><span class="toc-section-number">2.1</span> A bit of background on memory vulnerabilities</a></li>
-<li><a href="#exploitation-primitives"><span class="toc-section-number">2.2</span> Exploitation primitives</a></li>
-<li><a href="#stack-overflows"><span class="toc-section-number">2.3</span> Stack overflows</a></li>
-<li><a href="#code-reuse-attacks"><span class="toc-section-number">2.4</span> Code reuse attacks</a></li>
-<li><a href="#non-control-data-exploits"><span class="toc-section-number">2.5</span> Non-control data exploits</a></li>
-<li><a href="#hardware-support-for-protection-against-memory-vulnerabilities"><span class="toc-section-number">2.6</span> Hardware support for protection against memory vulnerabilities</a></li>
-<li><a href="#other-issues"><span class="toc-section-number">2.7</span> Other issues</a></li>
-<li><a href="#jit-compiler-vulnerabilities"><span class="toc-section-number">2.8</span> JIT compiler vulnerabilities</a></li>
+<li><a href="#memory-vulnerability-based-attacks-and-mitigations"><span class="toc-section-number">2</span> Memory vulnerability based attacks and mitigations <span>§</span></a><ul>
+<li><a href="#a-bit-of-background-on-memory-vulnerabilities"><span class="toc-section-number">2.1</span> A bit of background on memory vulnerabilities <span>§</span></a></li>
+<li><a href="#exploitation-primitives"><span class="toc-section-number">2.2</span> Exploitation primitives <span>§</span></a></li>
+<li><a href="#stack-buffer-overflows"><span class="toc-section-number">2.3</span> Stack buffer overflows <span>§</span></a></li>
+<li><a href="#code-reuse-attacks"><span class="toc-section-number">2.4</span> Code reuse attacks <span>§</span></a></li>
+<li><a href="#non-control-data-exploits"><span class="toc-section-number">2.5</span> Non-control data exploits <span>§</span></a></li>
+<li><a href="#hardware-support-for-protection-against-memory-vulnerabilities"><span class="toc-section-number">2.6</span> Hardware support for protection against memory vulnerabilities <span>§</span></a></li>
+<li><a href="#other-issues"><span class="toc-section-number">2.7</span> Other issues <span>§</span></a></li>
+<li><a href="#jit-compiler-vulnerabilities"><span class="toc-section-number">2.8</span> JIT compiler vulnerabilities <span>§</span></a></li>
 </ul></li>
-<li><a href="#covert-channels-and-side-channels"><span class="toc-section-number">3</span> Covert channels and side-channels</a><ul>
-<li><a href="#cache-covert-channels"><span class="toc-section-number">3.1</span> Cache covert channels</a><ul>
-<li><a href="#typical-cache-architecture"><span class="toc-section-number">3.1.1</span> Typical cache architecture</a></li>
-<li><a href="#flush-reload"><span class="toc-section-number">3.1.2</span> Flush + Reload</a></li>
-<li><a href="#prime-probe"><span class="toc-section-number">3.1.3</span> Prime + Probe</a></li>
+<li><a href="#covert-channels-and-side-channels"><span class="toc-section-number">3</span> Covert channels and side-channels <span>§</span></a><ul>
+<li><a href="#cache-covert-channels"><span class="toc-section-number">3.1</span> Cache covert channels <span>§</span></a><ul>
+<li><a href="#typical-cache-architecture"><span class="toc-section-number">3.1.1</span> Typical cache architecture <span>§</span></a></li>
+<li><a href="#flush-reload"><span class="toc-section-number">3.1.2</span> Flush + Reload <span>§</span></a></li>
+<li><a href="#prime-probe"><span class="toc-section-number">3.1.3</span> Prime + Probe <span>§</span></a></li>
 </ul></li>
-<li><a href="#timing-covert-channels"><span class="toc-section-number">3.2</span> Timing covert channels</a></li>
-<li><a href="#resource-contention-channels"><span class="toc-section-number">3.3</span> Resource contention channels</a></li>
-<li><a href="#channels-making-use-of-aliasing-in-branch-predictors-and-other-predictors"><span class="toc-section-number">3.4</span> Channels making use of aliasing in branch predictors and other predictors</a></li>
+<li><a href="#timing-covert-channels"><span class="toc-section-number">3.2</span> Timing covert channels <span>§</span></a></li>
+<li><a href="#resource-contention-channels"><span class="toc-section-number">3.3</span> Resource contention channels <span>§</span></a></li>
+<li><a href="#channels-making-use-of-aliasing-in-branch-predictors-and-other-predictors"><span class="toc-section-number">3.4</span> Channels making use of aliasing in branch predictors and other predictors <span>§</span></a></li>
 </ul></li>
-<li><a href="#physical-access-side-channel-attacks"><span class="toc-section-number">4</span> Physical access side-channel attacks</a></li>
-<li><a href="#remote-access-side-channel-attacks"><span class="toc-section-number">5</span> Remote access side-channel attacks</a><ul>
-<li><a href="#timing-attacks"><span class="toc-section-number">5.1</span> Timing attacks</a></li>
-<li><a href="#cache-side-channel-attacks"><span class="toc-section-number">5.2</span> Cache side-channel attacks</a></li>
+<li><a href="#physical-access-side-channel-attacks"><span class="toc-section-number">4</span> Physical access side-channel attacks <span>§</span></a></li>
+<li><a href="#remote-access-side-channel-attacks"><span class="toc-section-number">5</span> Remote access side-channel attacks <span>§</span></a><ul>
+<li><a href="#timing-attacks"><span class="toc-section-number">5.1</span> Timing attacks <span>§</span></a></li>
+<li><a href="#cache-side-channel-attacks"><span class="toc-section-number">5.2</span> Cache side-channel attacks <span>§</span></a></li>
 </ul></li>
-<li><a href="#supply-chain-attacks"><span class="toc-section-number">6</span> Supply chain attacks</a><ul>
-<li><a href="#history-of-supply-chain-attacks"><span class="toc-section-number">6.1</span> History of supply chain attacks</a></li>
+<li><a href="#supply-chain-attacks"><span class="toc-section-number">6</span> Supply chain attacks <span>§</span></a><ul>
+<li><a href="#history-of-supply-chain-attacks"><span class="toc-section-number">6.1</span> History of supply chain attacks <span>§</span></a></li>
 </ul></li>
-<li><a href="#other-security-topics-relevant-for-compiler-developers"><span class="toc-section-number">7</span> Other security topics relevant for compiler developers</a></li>
-<li><a href="#appendix-contribution-guidelines">Appendix: contribution guidelines</a></li>
-<li><a href="#references">References</a></li>
+<li><a href="#other-security-topics-relevant-for-compiler-developers"><span class="toc-section-number">7</span> Other security topics relevant for compiler developers <span>§</span></a></li>
+<li><a href="#appendix-contribution-guidelines">Appendix: contribution guidelines <span>§</span></a></li>
+<li><a href="#references">References <span>§</span></a></li>
 </ul>
 </nav>
-<h1 id="introduction"><span class="header-section-number">1</span> Introduction</h1>
+<h1 id="introduction"><span class="header-section-number">1</span> Introduction <a href="#introduction" class="selflink">§</a></h1>
 <p>Compilers, assemblers and similar tools generate all the binary code that processors execute. It is no surprise then that for security analysis and hardening relevant for binary code, these tools have a major role to play. Often the only practical way to protect all binaries with a particular security hardening method is to let the compiler adapt its automatic code generation.</p>
 <p>With software security becoming even more important in recent years, it is no surprise to see an ever increasing variety of security hardening features and mitigations against vulnerabilities implemented in compilers.</p>
 <p>Indeed, compared to a few decades ago, today’s compiler developer is much more likely to work on security features, at least some of their time.</p>
@@ -77,7 +77,7 @@
 <p>There is a lot of material that can be found explaining individual vulnerabilities or attack vectors. There are also lots of presentations explaining specific exploits. But there seems to be a limited set of material that gives a structured overview of all vulnerabilities and exploits for which a code generator could play a role in protecting against them.</p>
 <p>This book aims to provide such a structured, broad overview. It does not necessarily go into full details. Instead it aims to give a thorough description of all relevant high-level aspects of attacks, vulnerabilities, mitigations and hardening techniques. For further details, this book provides pointers to material with more details on specific techniques.</p>
 <p>The purpose of this book is to serve as a guide to every compiler developer that needs to learn about software security relevant to compilers. Even though the focus is on compiler developers, we expect that this book will also be useful to other people working on low-level software.</p>
-<h2 id="why-an-open-source-book"><span class="header-section-number">1.1</span> Why an open source book?</h2>
+<h2 id="why-an-open-source-book"><span class="header-section-number">1.1</span> Why an open source book? <a href="#why-an-open-source-book" class="selflink">§</a></h2>
 <p>The idea for this book emerged out of a frustration of not finding a good overview on this topic. Kristof Beyls and Georgia Kouveli, both compiler engineers working on security features, wished a book like this would exist. After not finding such a book, they decided to try and write one themselves. They immediately realized that they do not have all necessary expertise themselves to complete such a daunting task. So they decided to try and create this book in an open source style, seeking contributions from many experts.</p>
 <p>As you read this, the book remains unfinished. This book may well never be finished, as new vulnerabilities continue to be discovered regularly. Our hope is that developing the book as an open source project will allow for it to continue to evolve and improve. The open source development process of this book increases the likelihood that it remains relevant as new vulnerabilities and mitigations emerge.</p>
 <p>Kristof and Georgia, the initial authors, are far from experts on all possible vulnerabilities. So what is the plan to get high quality content to cover all relevant topics? It is two-fold.</p>
@@ -85,8 +85,8 @@
 <p>Second, they very much invite and welcome contributions. If you’re interested in potentially contributing content, please go to the home location for the open source project at <a href="https://github.com/llsoftsec/llsoftsecbook" class="uri">https://github.com/llsoftsec/llsoftsecbook</a>.</p>
 <p>As a reader, you can also contribute to making this book better. We highly encourage feedback, both positive and constructive criticisms. We prefer feedback to be received through <a href="https://github.com/llsoftsec/llsoftsecbook" class="uri">https://github.com/llsoftsec/llsoftsecbook</a>.</p>
 
-<h1 id="memory-vulnerability-based-attacks-and-mitigations"><span class="header-section-number">2</span> Memory vulnerability based attacks and mitigations</h1>
-<h2 id="a-bit-of-background-on-memory-vulnerabilities"><span class="header-section-number">2.1</span> A bit of background on memory vulnerabilities</h2>
+<h1 id="memory-vulnerability-based-attacks-and-mitigations"><span class="header-section-number">2</span> Memory vulnerability based attacks and mitigations <a href="#memory-vulnerability-based-attacks-and-mitigations" class="selflink">§</a></h1>
+<h2 id="a-bit-of-background-on-memory-vulnerabilities"><span class="header-section-number">2.1</span> A bit of background on memory vulnerabilities <a href="#a-bit-of-background-on-memory-vulnerabilities" class="selflink">§</a></h2>
 <p>Memory access errors describe memory accesses that, although permitted by a program, were not intended by the programmer. These types of errors are usually defined <span class="citation" data-cites="Hicks2014">(Hicks <a href="#ref-Hicks2014">2014</a>)</span> by explicitly listing their types, which include:</p>
 <ul>
 <li>buffer overflow</li>
@@ -96,47 +96,84 @@
 <li>illegal free</li>
 </ul>
 <p>Memory vulnerabilities are an important class of vulnerabilities that arise due to these types of errors, and they most commonly occur due to programming mistakes when using languages such as C/C++. These languages do not provide mechanisms to protect against memory access errors by default. An attacker can exploit such vulnerabilities to leak sensitive data or overwrite critical memory locations and gain control of the vulnerable program.</p>
-<p>Memory vulnerabilities have a long history. The <a href="https://en.wikipedia.org/wiki/Morris_worm">Morris worm</a> in 1988 was the first widely publicized attack exploiting a buffer overflow. Later, in the mid-90s, a few famous write-ups describing buffer overflows appeared <span class="citation" data-cites="AlephOne1996">(Aleph One <a href="#ref-AlephOne1996">1996</a>)</span>. <a href="#stack-overflows">Stack overflows</a> were mitigated with <a href="#stack-overflows">stack canaries</a> and <a href="#stack-overflows">non-executable stacks</a>. The answer was more ingenious ways to bypass these mitigations: <a href="#code-reuse-attacks">code reuse attacks</a>, starting with attacks like <a href="#code-reuse-attacks">return-into-libc</a> <span class="citation" data-cites="Solar1997">(Solar Designer <a href="#ref-Solar1997">1997</a>)</span>. Code reuse attacks later evolved to <a href="#code-reuse-attacks">Return-Oriented Programming (ROP)</a> <span class="citation" data-cites="Shacham2007">(Shacham <a href="#ref-Shacham2007">2007</a>)</span> and even more complex techniques.</p>
+<p>Memory vulnerabilities have a long history. The <a href="https://en.wikipedia.org/wiki/Morris_worm">Morris worm</a> in 1988 was the first widely publicized attack exploiting a buffer overflow. Later, in the mid-90s, a few famous write-ups describing buffer overflows appeared <span class="citation" data-cites="AlephOne1996">(Aleph One <a href="#ref-AlephOne1996">1996</a>)</span>. <a href="#stack-buffer-overflows">Stack buffer overflows</a> were mitigated with <a href="#stack-buffer-overflows">stack canaries</a> and <a href="#stack-buffer-overflows">non-executable stacks</a>. The answer was more ingenious ways to bypass these mitigations: <a href="#code-reuse-attacks">code reuse attacks</a>, starting with attacks like <a href="#code-reuse-attacks">return-into-libc</a> <span class="citation" data-cites="Solar1997">(Solar Designer <a href="#ref-Solar1997">1997</a>)</span>. Code reuse attacks later evolved to <a href="#code-reuse-attacks">Return-Oriented Programming (ROP)</a> <span class="citation" data-cites="Shacham2007">(Shacham <a href="#ref-Shacham2007">2007</a>)</span> and even more complex techniques.</p>
 <p>To defend against code reuse attacks, the <a href="#code-reuse-attacks">Address Space Layout Randomization (ASLR)</a> and <a href="#code-reuse-attacks">Control-Flow Integrity (CFI)</a> measures were introduced.  This interaction between offensive and defensive security research has been essential to improving security, and continues to this day. Each newly deployed mitigation results in attempts, often successful, to bypass it, or in alternative, more complex exploitation techniques, and even tools to automate them.</p>
 <p>Memory safe <span class="citation" data-cites="Hicks2014">(Hicks <a href="#ref-Hicks2014">2014</a>)</span> languages are designed with prevention of such vulnerabilities in mind and use techniques such as bounds checking and automatic memory management. If these languages promise to eliminate memory vulnerabilities, why are we still discussing this topic?</p>
 <p>On the one hand, C and C++ remain very popular languages, particular in the implementation of low-level software. On the other hand, programs written in memory safe languages can themselves be vulnerable to memory errors as a result of bugs in how they are implemented, e.g. a bug in their compiler. Can we fix the problem by also using memory safe languages for the compiler and runtime implementation? Even if that were as simple as it sounds, unfortunately there are types of programming errors that these languages cannot protect against. For example, a logical error in the implementation of a compiler or runtime for a memory safe language can lead to a memory access error not being detected. We will see examples of such logic errors in compiler optimizations in a <a href="#jit-compiler-vulnerabilities">later section</a>.</p>
-<p>Given the rich history of memory vulnerabilities and mitigations and the active developments in this area, compiler developers are likely to encounter some of these issues over the course of their careers. This chapter aims to serve as an introduction to this area. We start with a discussion of exploitation primitives, which can be useful when discussing threat models . We then continue with a more detailed discussion of the various types of vulnerabilities, along with their mitigations, presented in a rough chronological order of their appearance, and, therefore, complexity.</p>
-<h2 id="exploitation-primitives"><span class="header-section-number">2.2</span> Exploitation primitives</h2>
+<p>Given the rich history of memory vulnerabilities and mitigations and the active developments in this area, compiler developers are likely to encounter some of these issues over the course of their careers. This chapter aims to serve as an introduction to this area. We start with a discussion of exploitation primitives, which can be useful when analyzing threat models . We then continue with a more detailed discussion of the various types of vulnerabilities, along with their mitigations, presented in a rough chronological order of their appearance, and, therefore, complexity.</p>
+<h2 id="exploitation-primitives"><span class="header-section-number">2.2</span> Exploitation primitives <a href="#exploitation-primitives" class="selflink">§</a></h2>
+<p>Newcomers to the area of software security may find themselves lost in many blog posts and other publications describing specific memory vulnerabilities and how to exploit them. Two very common, yet unfamiliar to a newcomer, terms that appear in such publications are <em>read primitive</em> and <em>write primitive</em>. In order to understand memory vulnerabilities and be able to design effective mitigations, it’s important to understand what these terms mean, how these primitives could be obtained by an attacker, and how they can be used.</p>
+<p>An <em>exploit primitive</em> is a mechanism that allows an attacker to perform a specific operation in the memory space of the victim program. This is done by providing specially crafted input to the victim program.</p>
+<p>A <em>write primitive</em> gives the attacker some level of write access to the victim’s memory space. The value written and the address written to may be controlled by the attacker to various degrees. The primitive, for example, may allow:</p>
+<ul>
+<li>writing a fixed value to an attacker-controlled address, or</li>
+<li>writing to an address consisting of a fixed base and an attacker-controlled offset limited to a specific range (e.g. a 32-bit offset), or</li>
+<li>writing to an attacker-controlled base address with a fixed offset.</li>
+</ul>
+<p>Primitives can be further classified according to more detailed properties. See slide 11 of <span class="citation" data-cites="Miller2012">(Miller, <a href="#ref-Miller2012">n.d.</a>)</span> for an example.</p>
+<p>The most powerful version of a write primitive is an <em>arbitrary write</em> primitive, where both the address and the value are fully controlled by the attacker.</p>
+<p>A <em>read primitive</em>, respectively, gives the attacker read access to the victim’s memory space. The address of the memory location accessed will be controlled by the attacker to some degree, as for the write primitive. A particularly useful primitive is an <em>arbitrary read</em> primitive, in which the address is fully controlled by the attacker.</p>
+<p>The effects of a write primitive are perhaps easier to understand, as it has obvious side-effects: a value is written to the victim program’s memory. But how can an attacker observe the result of a read primitive?</p>
+<p>This depends on whether the attack is interactive or non-interactive <span class="citation" data-cites="Hu2016">(Hu et al. <a href="#ref-Hu2016">2016</a>)</span>.</p>
+<ul>
+<li>In an <em>interactive attack</em>, the attacker gives malicious input to the victim program. The malicious input causes the victim program to perform the read the attacker instructed it to, and to output the results of that read. This output could be any kind of output, for example a network packet that the victim transmits. The attacker can observe the result of the read primitive by looking at this output, for example parsing this network packet. This process then repeats: the attacker sends more malicious input to the victim, observes the output and prepares the next input. You can see an example of this type of attack in <span class="citation" data-cites="Beer2020">(Beer <a href="#ref-Beer2020">2020</a>)</span>, which describes a zero-click radio proximity exploit.</li>
+<li>In a <em>non-interactive (one-shot) attack</em>, the attacker provides all malicious input to the victim program at once. The malicious input triggers multiple primitives one after the other, and the primitives are able to observe the effects of the preceding operations through the victim program’s state. The input could be, for example, in the form of a JavaScript program <span class="citation" data-cites="Groß2020">(Groß <a href="#ref-Groß2020">2020</a>)</span>, or a PDF file pretending to be a GIF <span class="citation" data-cites="Beer2021">(Beer and Groß <a href="#ref-Beer2021">2021</a>)</span>.</li>
+</ul>
 
-<h2 id="stack-overflows"><span class="header-section-number">2.3</span> Stack overflows</h2>
+<p>How does an attacker obtain these kinds of primitives in the first place? The details vary, and in some cases it takes a combination of many techniques, some of which are out of scope for this book. But we will be describing a few of them in this chapter. For example a stack buffer overflow results in a (restricted) write primitive when the input size exceeds what the program expected.</p>
+<p>As part of an attack, the attacker will want to execute each primitive more than once, since a single read or write operation will rarely be enough to achieve their end goal (more on this later). How can primitives be combined to perform multiple reads/writes?</p>
+<p>In the case of an interactive attack, preparing and sending input to the victim program and parsing the output of the victim program are usually done in an external program that drives the exploit. The attacker is free to use a programming language of their choice, as long as they can interact with the victim program in it. Let’s assume, for example, an exploit program in C, communicating with the victim program over TCP. In this case, the primitives are abstracted into C functions, which prepare and send packets to the victim, and parse the victim’s responses. Using the primitives is then as simple as calling these functions. These calls can be easily combined with arbitrary computations, all written in C, to form the exploit.</p>
+<p>For this cycle of repeated input/output interactions to work, the state of the victim program must not be lost between the different iterations of providing input and observing output. In other words, the victim process must not be restarted.</p>
+<p>It’s interesting to note that while the read/write primitives consist of carefully constructed inputs to the victim program, the attacker can view these inputs as <em>instructions</em> to the victim program. The victim program effectively implements an interpreter unintentionally, and the attacker can send instructions to this interpreter. This is explored further in <span class="citation" data-cites="Dullien2020">(Dullien <a href="#ref-Dullien2020">2020</a>)</span>.</p>
+<p>In the case of a non-interactive attack, all computation happens within the victim program. The duality of input data and code is even more obvious in this case, as the malicious input to the victim can be viewed as the exploit code. There are cases for which the input is obviously interpreted as code by the victim application as well, as in the case of a JavaScript program given as input to a JavaScript engine. In this case, the read/write primitives would be written as JavaScript functions, which when called have the unintended side-effect of accessing arbitrary memory that a JavaScript program is not supposed to have access to. The primitives can be chained together with arbitrary computations, also expressed in JavaScript.</p>
+<p>There are, however, cases where the correspondence between data and code isn’t as obvious. For example, in <span class="citation" data-cites="Beer2021">(Beer and Groß <a href="#ref-Beer2021">2021</a>)</span>, the malicious input consists of a PDF file, masquerading as a GIF. Due to an integer overflow bug in the PDF decoder, the malicious input leads to an unbounded buffer access, therefore to an arbitrary read/write primitive. In the case of JavaScript engine exploitation, the attacker would normally be able to use JavaScript operations and perform arbitrary computations, making exploitation more straightforward. In this case, there are no scripting capabilities officially supported. The attackers, however, take advantage of the compression format intricacies to implement a small computer architecture, in thousands of simple commands to the decoder. In this way, they effectively <em>introduce</em> scripting capabilities and are able to express their exploit as a program to this architecture.</p>
+<p>So far, we have described read/write primitives. We have also discussed how an attacker might perform arbitrary computations: * in an external program in the case of interactive attacks, or * by using scripting capabilities (whether originally supported or introduced by the attacker) in non-interactive attacks. Assuming an attacker has gained these capabilities, how can they use them to achieve their goals?</p>
+<p>The ultimate goal of an attacker may vary: it may be, among other things, getting access to a system, leaking sensitive information or bringing down a service. Frequently, a first step towards these wider goals is arbitrary code execution within the victim process. We have already mentioned that the attacker will typically have arbitrary computation capabilities at this point, but arbitrary code execution also involves things like calling arbitrary library functions and performing system calls.</p>
+<p>Some examples of how the attacker may use the obtained primitives:</p>
+<ul>
+<li>Leak information, such as pointers to specific data structures or code, or the stack pointer.</li>
+<li>Overwrite the stack contents, e.g. to perform a <a href="#code-reuse-attacks">ROP attack</a>.</li>
+<li>Overwrite non-control data, e.g. authorization state. Sometimes this step is sufficient to achieve the attacker’s goal, bypassing the need for arbitrary code execution.</li>
+</ul>
+<p>Once arbitrary code execution is achieved, the attacker may need to exploit additional vulnerabilities in order to escape a process sandbox, escalate privilege, etc. Such vulnerability chaining is common, but for the purposes of this chapter we will focus on:</p>
+<ul>
+<li>Preventing memory vulnerabilities in the first place, thus stopping the attacker from obtaining powerful read/write primitives.</li>
+<li>Mitigating the effects of read/write primitives, e.g. with mechanisms to maintain <a href="#code-reuse-attacks">Control-Flow Integrity (CFI)</a>.</li>
+</ul>
+<h2 id="stack-buffer-overflows"><span class="header-section-number">2.3</span> Stack buffer overflows <a href="#stack-buffer-overflows" class="selflink">§</a></h2>
 
-<h2 id="code-reuse-attacks"><span class="header-section-number">2.4</span> Code reuse attacks</h2>
+<h2 id="code-reuse-attacks"><span class="header-section-number">2.4</span> Code reuse attacks <a href="#code-reuse-attacks" class="selflink">§</a></h2>
 
-<h2 id="non-control-data-exploits"><span class="header-section-number">2.5</span> Non-control data exploits</h2>
+<h2 id="non-control-data-exploits"><span class="header-section-number">2.5</span> Non-control data exploits <a href="#non-control-data-exploits" class="selflink">§</a></h2>
 
-<h2 id="hardware-support-for-protection-against-memory-vulnerabilities"><span class="header-section-number">2.6</span> Hardware support for protection against memory vulnerabilities</h2>
+<h2 id="hardware-support-for-protection-against-memory-vulnerabilities"><span class="header-section-number">2.6</span> Hardware support for protection against memory vulnerabilities <a href="#hardware-support-for-protection-against-memory-vulnerabilities" class="selflink">§</a></h2>
 
-<h2 id="other-issues"><span class="header-section-number">2.7</span> Other issues</h2>
+<h2 id="other-issues"><span class="header-section-number">2.7</span> Other issues <a href="#other-issues" class="selflink">§</a></h2>
 
-<h2 id="jit-compiler-vulnerabilities"><span class="header-section-number">2.8</span> JIT compiler vulnerabilities</h2>
+<h2 id="jit-compiler-vulnerabilities"><span class="header-section-number">2.8</span> JIT compiler vulnerabilities <a href="#jit-compiler-vulnerabilities" class="selflink">§</a></h2>
 
-<h1 id="covert-channels-and-side-channels"><span class="header-section-number">3</span> Covert channels and side-channels</h1>
+<h1 id="covert-channels-and-side-channels"><span class="header-section-number">3</span> Covert channels and side-channels <a href="#covert-channels-and-side-channels" class="selflink">§</a></h1>
 <p>A large class of attacks make use of so-called side-channels, which are defined below. The class is so big that in this book we devote the next two chapters to such attacks. Side-channels have enough complexity to discuss them separately in this chapter. This chapter describes the mechanisms used to make communication happen through side-channels. The next two chapters explore how attacks are constructed that use side-channels.</p>
 <p>Side-channels and covert channels are closely related. Both side-channels and covert channels are communication channels between two entities in a system, where the entities are not supposed to be allowed to communicate that way.</p>
 <p>A <strong>covert channel</strong> is such a channel where both entities intent to communicate through the channel. A <strong>side-channel</strong> is a such a channel where one end is the victim of an attack using the channel.</p>
 <p>In other words, the difference between a covert channel and a side-channel is whether both entities intent to communicate, in which case we talk about a covert channel. If one entity does not intent to communicate, but the other entity nonetheless extracts some data from the first, it is called a side-channel attack. The entity not intending to communicate, and hence being attacked, is called the victim.</p>
 <p>The rest of this chapter mostly describes a variety of common covert channel mechanisms. It does not aim to differentiate much on whether both ends intend to cooperate on the communication, or whether one end is a victim under attack of the other end.</p>
 <p>In the next few sections we’ll explore a common few channels that can be used as covert channels.</p>
-<h2 id="cache-covert-channels"><span class="header-section-number">3.1</span> Cache covert channels</h2>
+<h2 id="cache-covert-channels"><span class="header-section-number">3.1</span> Cache covert channels <a href="#cache-covert-channels" class="selflink">§</a></h2>
 <p><a href="https://en.wikipedia.org/wiki/Cache_(computing)">Caches</a> are used in almost every computing system. They are small and much faster memories than the main memory. They aim to automatically keep frequently used data accessed by programs, so that average memory access time improves. Various techniques exist where a covert communication can happen between processes that share a cache, without the processes having rights to read or write to the same memory locations. To understand how these techniques work, one needs to understand typical organization and operation of a cache.</p>
-<h3 id="typical-cache-architecture"><span class="header-section-number">3.1.1</span> Typical cache architecture</h3>
+<h3 id="typical-cache-architecture"><span class="header-section-number">3.1.1</span> Typical cache architecture <a href="#typical-cache-architecture" class="selflink">§</a></h3>
 
-<h3 id="flush-reload"><span class="header-section-number">3.1.2</span> Flush + Reload</h3>
-<h3 id="prime-probe"><span class="header-section-number">3.1.3</span> Prime + Probe</h3>
-<h2 id="timing-covert-channels"><span class="header-section-number">3.2</span> Timing covert channels</h2>
-<h2 id="resource-contention-channels"><span class="header-section-number">3.3</span> Resource contention channels</h2>
-<h2 id="channels-making-use-of-aliasing-in-branch-predictors-and-other-predictors"><span class="header-section-number">3.4</span> Channels making use of aliasing in branch predictors and other predictors</h2>
+<h3 id="flush-reload"><span class="header-section-number">3.1.2</span> Flush + Reload <a href="#flush-reload" class="selflink">§</a></h3>
+<h3 id="prime-probe"><span class="header-section-number">3.1.3</span> Prime + Probe <a href="#prime-probe" class="selflink">§</a></h3>
+<h2 id="timing-covert-channels"><span class="header-section-number">3.2</span> Timing covert channels <a href="#timing-covert-channels" class="selflink">§</a></h2>
+<h2 id="resource-contention-channels"><span class="header-section-number">3.3</span> Resource contention channels <a href="#resource-contention-channels" class="selflink">§</a></h2>
+<h2 id="channels-making-use-of-aliasing-in-branch-predictors-and-other-predictors"><span class="header-section-number">3.4</span> Channels making use of aliasing in branch predictors and other predictors <a href="#channels-making-use-of-aliasing-in-branch-predictors-and-other-predictors" class="selflink">§</a></h2>
 
-<h1 id="physical-access-side-channel-attacks"><span class="header-section-number">4</span> Physical access side-channel attacks</h1>
+<h1 id="physical-access-side-channel-attacks"><span class="header-section-number">4</span> Physical access side-channel attacks <a href="#physical-access-side-channel-attacks" class="selflink">§</a></h1>
 
-<h1 id="remote-access-side-channel-attacks"><span class="header-section-number">5</span> Remote access side-channel attacks</h1>
+<h1 id="remote-access-side-channel-attacks"><span class="header-section-number">5</span> Remote access side-channel attacks <a href="#remote-access-side-channel-attacks" class="selflink">§</a></h1>
 <p>This chapter covers side-channel attacks for which the attacker does not need physical access to the hardware.</p>
-<h2 id="timing-attacks"><span class="header-section-number">5.1</span> Timing attacks</h2>
+<h2 id="timing-attacks"><span class="header-section-number">5.1</span> Timing attacks <a href="#timing-attacks" class="selflink">§</a></h2>
 <p>An implementation of a cryptographic algorithm can leak information about the data it processes if its run time is influenced by the value of the processed data. Attacks making use of this are called timing attacks.</p>
 <p>The main mitigation against such attacks consists of carefully implementing the algorithm such that the execution time remains independent of the processed data. This can be done by making sure that both:</p>
 <ol type="a">
@@ -147,15 +184,15 @@
 </ol>
 <p>At the moment, we do not know of a compiler implementation that actively helps to guarantee both (a) and (b). A great reference giving practical advice on how to achieve (a), (b) and more security hardening properties specific for cryptographic kernels is found in <span class="citation" data-cites="Pornin2018">(Pornin <a href="#ref-Pornin2018">2018</a>)</span>.</p>
 <p>As discussed in <span class="citation" data-cites="Pornin2018">(Pornin <a href="#ref-Pornin2018">2018</a>)</span>, when implementing cryptographic algorithms, you also need to keep cache side-channel attacks in mind, which are discussed in the <a href="#cache-side-channel-attacks">section on cache side-channel attacks</a>.</p>
-<h2 id="cache-side-channel-attacks"><span class="header-section-number">5.2</span> Cache side-channel attacks</h2>
+<h2 id="cache-side-channel-attacks"><span class="header-section-number">5.2</span> Cache side-channel attacks <a href="#cache-side-channel-attacks" class="selflink">§</a></h2>
 <!-- markdown-link-check-disable -->
 
 <!-- markdown-link-check-enable-->
-<h1 id="supply-chain-attacks"><span class="header-section-number">6</span> Supply chain attacks</h1>
+<h1 id="supply-chain-attacks"><span class="header-section-number">6</span> Supply chain attacks <a href="#supply-chain-attacks" class="selflink">§</a></h1>
 <p>A software <em>supply chain attack</em> occurs when an attacker interferes with the software development or distribution processes with the intention to impact users of that software.</p>
 <p>Supply chain attacks and their possible mitigations are not specific to compilers. However, compilers are an attractive target for attack because they are widely deployed to developers, in continuous integration systems and as JITs. Also, an infected compiler has the possibilty to make a much larger impact if it can silently spread the infection to other software created with or run using it.</p>
 <p>This chapter explores the history of supply chain attacks that involve compilers and what can be done to prevent them.</p>
-<h2 id="history-of-supply-chain-attacks"><span class="header-section-number">6.1</span> History of supply chain attacks</h2>
+<h2 id="history-of-supply-chain-attacks"><span class="header-section-number">6.1</span> History of supply chain attacks <a href="#history-of-supply-chain-attacks" class="selflink">§</a></h2>
 <p>As far back as 1974 Karger &amp; Schell theorized about an attack on the Multics operating system via the PL/I compiler <span class="citation" data-cites="Karger1974">(Paul A. and Roger R. <a href="#ref-Karger1974">1974</a>)</span>. In this attack, a trap door is inserted into the compiler, which then injects malicious code into generated object code. Furthermore, the trap door could be designed to reinsert itself into the compiler binary so that future compilers are silently infected without needing changes to their source code. This attack method was subsequently popularised by Ken Thompson in his 1984 ACM Turing Award acceptance speech <em>Reflections on Trusting Trust</em> <span class="citation" data-cites="Thompson1984">(Thompson <a href="#ref-Thompson1984">1984</a>)</span>.</p>
 <p>If these cases seem far-fetched then consider that there have been several real examples of supply chain attacks on development tools.</p>
 <p>Induc is a family of viruses that infects a pre-compiled library in the Delphi toolchain with malicious code <span class="citation" data-cites="Gostev2009">(Gostev <a href="#ref-Gostev2009">2009</a>)</span>. When Delphi compiles a project the malicious library is included into the resulting executable, thus enabling the virus to spread. The virus was first detected in 2009 and was circulating undetected for at least a year beforehand. Several popular applications are known to have been infected, including a chat client and a media player. Overall, in excess of a hundred thousand infected computers were detected world-wide by anti-virus solutions.</p>
@@ -163,20 +200,29 @@
 <p>A trojanized linker was found to be involved in a supply chain attack discovered in 2017 named ShadowPad <span class="citation" data-cites="Greenberg2019">(Greenberg <a href="#ref-Greenberg2019">2019</a>)</span>. Some instances of the attack were perpetrated using a trojanized Visual Studio linker that silently incorporates a malicious library into applications as they are built. Related attacks named CCleaner and ShadowHammer used the same approach of a trojanized linker to infect built applications. Infected applications from these attacks were distributed to millions of users world-wide.</p>
 <p>These cases highlight that attacks on compilers, and especially linkers and libraries, are a viable route to silently infect many other applications, and there is no doubt that there will be more such attacks in the future. Let us now explore what we can do about these.</p>
 
-<h1 id="other-security-topics-relevant-for-compiler-developers"><span class="header-section-number">7</span> Other security topics relevant for compiler developers</h1>
+<h1 id="other-security-topics-relevant-for-compiler-developers"><span class="header-section-number">7</span> Other security topics relevant for compiler developers <a href="#other-security-topics-relevant-for-compiler-developers" class="selflink">§</a></h1>
 
 
-<h1 id="appendix-contribution-guidelines" class="unnumbered">Appendix: contribution guidelines</h1>
+<h1 id="appendix-contribution-guidelines" class="unnumbered">Appendix: contribution guidelines <a href="#appendix-contribution-guidelines" class="selflink">§</a></h1>
 
 
 
-<h1 id="references" class="unnumbered">References</h1>
+<h1 id="references" class="unnumbered">References <a href="#references" class="selflink">§</a></h1>
 <div id="refs">
 <div id="ref-AlephOne1996">
 <p>Aleph One. 1996. “Smashing the Stack for Fun and Profit.” 1996. <a href="http://www.phrack.org/issues/49/14.html#article">http://www.phrack.org/issues/49/14.html#article</a>.</p>
 </div>
+<div id="ref-Beer2020">
+<p>Beer, Ian. 2020. “An iOS Zero-Click Radio Proximity Exploit Odyssey.” 2020. <a href="https://googleprojectzero.blogspot.com/2020/12/an-ios-zero-click-radio-proximity.html">https://googleprojectzero.blogspot.com/2020/12/an-ios-zero-click-radio-proximity.html</a>.</p>
+</div>
+<div id="ref-Beer2021">
+<p>Beer, Ian, and Samuel Groß. 2021. “A Deep Dive into an Nso Zero-Click iMessage Exploit: Remote Code Execution.” 2021. <a href="https://googleprojectzero.blogspot.com/2021/12/a-deep-dive-into-nso-zero-click.html">https://googleprojectzero.blogspot.com/2021/12/a-deep-dive-into-nso-zero-click.html</a>.</p>
+</div>
 <div id="ref-Cox2015">
 <p>Cox, Joseph. 2015. “Hack Brief: Malware Sneaks into the Chinese iOS App Store.” <em>WIRED</em>. <a href="https://www.wired.com/2015/09/hack-brief-malware-sneaks-chinese-ios-app-store/">https://www.wired.com/2015/09/hack-brief-malware-sneaks-chinese-ios-app-store/</a>.</p>
+</div>
+<div id="ref-Dullien2020">
+<p>Dullien, Thomas. 2020. “Weird Machines, Exploitability, and Provable Unexploitability.” <em>IEEE Transactions on Emerging Topics in Computing</em> 8 (2): 391–403. <a href="https://doi.org/10.1109/TETC.2017.2785300">https://doi.org/10.1109/TETC.2017.2785300</a>.</p>
 </div>
 <div id="ref-Gostev2009">
 <p>Gostev, Alexander. 2009. “A Short History of Induc.” 2009. <a href="https://securelist.com/a-short-history-of-induc/30555/">https://securelist.com/a-short-history-of-induc/30555/</a>.</p>
@@ -184,8 +230,17 @@
 <div id="ref-Greenberg2019">
 <p>Greenberg, Andy. 2019. “Supply Chain Hackers Snuck Malware into Videogames.” <em>WIRED</em>. <a href="https://www.wired.com/story/supply-chain-hackers-videogames-asus-ccleaner/">https://www.wired.com/story/supply-chain-hackers-videogames-asus-ccleaner/</a>.</p>
 </div>
+<div id="ref-Groß2020">
+<p>Groß, Samuel. 2020. “JITSploitation I: A Jit Bug.” 2020. <a href="https://googleprojectzero.blogspot.com/2020/09/jitsploitation-one.html">https://googleprojectzero.blogspot.com/2020/09/jitsploitation-one.html</a>.</p>
+</div>
 <div id="ref-Hicks2014">
 <p>Hicks, Michael. 2014. “What Is Memory Safety?” 2014. <a href="http://www.pl-enthusiast.net/2014/07/21/memory-safety/">http://www.pl-enthusiast.net/2014/07/21/memory-safety/</a>.</p>
+</div>
+<div id="ref-Hu2016">
+<p>Hu, Hong, Shweta Shinde, Sendroiu Adrian, Zheng Leong Chua, Prateek Saxena, and Zhenkai Liang. 2016. “Data-Oriented Programming: On the Expressiveness of Non-Control Data Attacks.” In <em>2016 Ieee Symposium on Security and Privacy (Sp)</em>, 969–86. <a href="https://doi.org/10.1109/SP.2016.62">https://doi.org/10.1109/SP.2016.62</a>.</p>
+</div>
+<div id="ref-Miller2012">
+<p>Miller, Matt. n.d. “Modeling the Exploitation and Mitigation of Memory Safety Vulnerabilities.” <a href="https://2012.ruxconbreakpoint.com/">Breakpoint 2012</a>. <a href="https://github.com/Microsoft/MSRC-Security-Research/blob/master/presentations/2012_10_Breakpoint/BreakPoint2012_Miller_Modeling_the_exploitation_and_mitigation_of_memory_safety_vulnerabilities.pdf">https://github.com/Microsoft/MSRC-Security-Research/blob/master/presentations/2012_10_Breakpoint/BreakPoint2012_Miller_Modeling_the_exploitation_and_mitigation_of_memory_safety_vulnerabilities.pdf</a>.</p>
 </div>
 <div id="ref-Karger1974">
 <p>Paul A., Karger, and Schell Roger R. 1974. “MULTICS Security Evaluation: VULNERABILITY Analysis,” 52. <a href="https://csrc.nist.gov/csrc/media/publications/conference-paper/1998/10/08/proceedings-of-the-21st-nissc-1998/documents/early-cs-papers/karg74.pdf">https://csrc.nist.gov/csrc/media/publications/conference-paper/1998/10/08/proceedings-of-the-21st-nissc-1998/documents/early-cs-papers/karg74.pdf</a>.</p>
