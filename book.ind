@@ -1,76 +1,122 @@
 \begin{theindex}
 
-  \item arbitrary code execution, \hyperpage{8}
+  \item arbitrary code execution, \hyperpage{9}
+  \item ASLR, \hyperpage{18}
 
   \indexspace
 
-  \item cache, \hyperpage{13}
-  \item cache access time, \hyperpage{14}
-  \item cache block, \hyperpage{14}
-  \item cache coherency, \hyperpage{16}
-  \item cache eviction, \hyperpage{14}
-  \item cache line, \hyperpage{14}
-  \item cache replacement policy, \hyperpage{14}
-  \item cache set, \hyperpage{15}
-  \item cache size, \hyperpage{14}
-  \item covert channel, \hyperpage{13}
+  \item backward-edge CFI, \hyperpage{18}
+  \item BTI, \hyperpage{22}
 
   \indexspace
 
-  \item direct-mapped cache, \hyperpage{15}
+  \item cache, \hyperpage{26}
+  \item cache access time, \hyperpage{27}
+  \item cache block, \hyperpage{28}
+  \item cache coherency, \hyperpage{29}
+  \item cache eviction, \hyperpage{28}
+  \item cache hit, \hyperpage{27}
+  \item cache line, \hyperpage{28}
+  \item cache miss, \hyperpage{27}
+  \item cache replacement policy, \hyperpage{28}
+  \item cache set, \hyperpage{28}
+  \item cache size, \hyperpage{27}
+  \item CFI, \hyperpage{18}
+  \item Collide+Probe, \hyperpage{30}
+  \item control data, \hyperpage{23}
+  \item counterfeit object-oriented programming (COOP), \hyperpage{17}
+  \item covert channel, \hyperpage{26}
 
   \indexspace
 
-  \item exploit primitive, \hyperpage{6}
+  \item data-only attacks, \hyperpage{23}
+  \item direct-mapped cache, \hyperpage{28}
+  \item dispatcher gadget, \hyperpage{15}
 
   \indexspace
 
-  \item fully-associative cache, \hyperpage{15}
+  \item Evict+Reload, \hyperpage{30}
+  \item Evict+Time, \hyperpage{30}
+  \item exploit primitive, \hyperpage{7}
 
   \indexspace
 
-  \item interactive attack, \hyperpage{7}
+  \item Flush+Flush, \hyperpage{30}
+  \item Flush+Prefetch, \hyperpage{30}
+  \item Flush+Reload, \hyperpage{29}
+  \item forward-edge CFI, \hyperpage{18}
+  \item fully-associative cache, \hyperpage{28}
 
   \indexspace
 
-  \item locality of reference, \hyperpage{14}
-  \item LRU replacement policy, \hyperpage{14}
+  \item gadget, \hyperpage{13}
+  \item gadget scanner, \hyperpage{15}
 
   \indexspace
 
-  \item memory access time, \hyperpage{14}
-  \item multi-level cache, \hyperpage{14}
+  \item info leak, \hyperpage{18}
+  \item interactive attack, \hyperpage{8}
 
   \indexspace
 
-  \item non-interactive (one-shot)   attack, \hyperpage{7}
+  \item jump-oriented programming (JOP), \hyperpage{15}
 
   \indexspace
 
-  \item principle of locality, \hyperpage{14}
-  \item pseudo-LRU replacement policy, \hyperpage{14}
+  \item locality of reference, \hyperpage{28}
+  \item LRU replacement policy, \hyperpage{28}
 
   \indexspace
 
-  \item random replacement policy, \hyperpage{14}
-  \item read primitive, \hyperpage{7}
+  \item measurement sequence, \hyperpage{30}
+  \item memory access time, \hyperpage{27}
+  \item multi-level cache, \hyperpage{27}
 
   \indexspace
 
-  \item set-associative cache, \hyperpage{15}
-  \item shellcode, \hyperpage{10}
-  \item side-channel, \hyperpage{13}
+  \item non-control data attacks, \hyperpage{23}
+  \item non-interactive (one-shot)   attack, \hyperpage{8}
 
   \indexspace
 
-  \item timing attacks, \hyperpage{18}
+  \item Pointer Authentication, \hyperpage{20}
+  \item pointer extension bits, \hyperpage{21}
+  \item pointer substitution attack, \hyperpage{22}
+  \item Prime+Probe, \hyperpage{30}
+  \item principle of locality, \hyperpage{28}
+  \item pseudo-LRU replacement policy, \hyperpage{28}
 
   \indexspace
 
-  \item victim, \hyperpage{13}
+  \item random replacement policy, \hyperpage{28}
+  \item read primitive, \hyperpage{8}
+  \item Reload+Refresh, \hyperpage{30}
+  \item reset sequence, \hyperpage{30}
+  \item return-oriented programming (ROP), \hyperpage{13}
+  \item ROP chain, \hyperpage{13}
 
   \indexspace
 
-  \item write primitive, \hyperpage{6}
+  \item set-associative cache, \hyperpage{28}
+  \item shadow stack, \hyperpage{20}
+  \item shellcode, \hyperpage{11}, \hyperpage{13}
+  \item side-channel, \hyperpage{26}
+  \item sigreturn-oriented programming (SROP), \hyperpage{17}
+  \item spy, \hyperpage{26}
+  \item stack pivoting, \hyperpage{14}
+
+  \indexspace
+
+  \item timing attacks, \hyperpage{32}
+  \item Top-Byte-Ignore (TBI), \hyperpage{21}
+  \item trigger sequence, \hyperpage{30}
+
+  \indexspace
+
+  \item victim, \hyperpage{26}
+
+  \indexspace
+
+  \item write primitive, \hyperpage{7}
 
 \end{theindex}

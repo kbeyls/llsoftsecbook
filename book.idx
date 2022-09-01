@@ -1,30 +1,68 @@
-\indexentry{exploit primitive|hyperpage}{6}
-\indexentry{write primitive|hyperpage}{6}
-\indexentry{read primitive|hyperpage}{7}
-\indexentry{interactive attack|hyperpage}{7}
-\indexentry{non-interactive (one-shot)   attack|hyperpage}{7}
-\indexentry{arbitrary code execution|hyperpage}{8}
-\indexentry{shellcode|hyperpage}{10}
-\indexentry{covert channel|hyperpage}{13}
-\indexentry{side-channel|hyperpage}{13}
-\indexentry{victim|hyperpage}{13}
-\indexentry{cache|hyperpage}{13}
-\indexentry{memory access time|hyperpage}{14}
-\indexentry{multi-level cache|hyperpage}{14}
-\indexentry{cache size|hyperpage}{14}
-\indexentry{cache access time|hyperpage}{14}
-\indexentry{principle of locality|hyperpage}{14}
-\indexentry{locality of reference|hyperpage}{14}
-\indexentry{cache block|hyperpage}{14}
-\indexentry{cache line|hyperpage}{14}
-\indexentry{cache eviction|hyperpage}{14}
-\indexentry{cache replacement policy|hyperpage}{14}
-\indexentry{LRU replacement policy|hyperpage}{14}
-\indexentry{random replacement policy|hyperpage}{14}
-\indexentry{pseudo-LRU replacement policy|hyperpage}{14}
-\indexentry{fully-associative cache|hyperpage}{15}
-\indexentry{set-associative cache|hyperpage}{15}
-\indexentry{direct-mapped cache|hyperpage}{15}
-\indexentry{cache set|hyperpage}{15}
-\indexentry{cache coherency|hyperpage}{16}
-\indexentry{timing attacks|hyperpage}{18}
+\indexentry{exploit primitive|hyperpage}{7}
+\indexentry{write primitive|hyperpage}{7}
+\indexentry{read primitive|hyperpage}{8}
+\indexentry{interactive attack|hyperpage}{8}
+\indexentry{non-interactive (one-shot)   attack|hyperpage}{8}
+\indexentry{arbitrary code execution|hyperpage}{9}
+\indexentry{shellcode|hyperpage}{11}
+\indexentry{shellcode|hyperpage}{13}
+\indexentry{gadget|hyperpage}{13}
+\indexentry{return-oriented programming (ROP)|hyperpage}{13}
+\indexentry{ROP chain|hyperpage}{13}
+\indexentry{stack pivoting|hyperpage}{14}
+\indexentry{gadget scanner|hyperpage}{15}
+\indexentry{jump-oriented programming (JOP)|hyperpage}{15}
+\indexentry{dispatcher gadget|hyperpage}{15}
+\indexentry{counterfeit object-oriented programming (COOP)|hyperpage}{17}
+\indexentry{sigreturn-oriented programming (SROP)|hyperpage}{17}
+\indexentry{ASLR|hyperpage}{18}
+\indexentry{info leak|hyperpage}{18}
+\indexentry{CFI|hyperpage}{18}
+\indexentry{forward-edge CFI|hyperpage}{18}
+\indexentry{backward-edge CFI|hyperpage}{18}
+\indexentry{shadow stack|hyperpage}{20}
+\indexentry{Pointer Authentication|hyperpage}{20}
+\indexentry{pointer extension bits|hyperpage}{21}
+\indexentry{Top-Byte-Ignore (TBI)|hyperpage}{21}
+\indexentry{pointer substitution attack|hyperpage}{22}
+\indexentry{BTI|hyperpage}{22}
+\indexentry{control data|hyperpage}{23}
+\indexentry{non-control data attacks|hyperpage}{23}
+\indexentry{data-only attacks|hyperpage}{23}
+\indexentry{covert channel|hyperpage}{26}
+\indexentry{side-channel|hyperpage}{26}
+\indexentry{victim|hyperpage}{26}
+\indexentry{spy|hyperpage}{26}
+\indexentry{cache|hyperpage}{26}
+\indexentry{memory access time|hyperpage}{27}
+\indexentry{cache hit|hyperpage}{27}
+\indexentry{cache miss|hyperpage}{27}
+\indexentry{multi-level cache|hyperpage}{27}
+\indexentry{cache size|hyperpage}{27}
+\indexentry{cache access time|hyperpage}{27}
+\indexentry{principle of locality|hyperpage}{28}
+\indexentry{locality of reference|hyperpage}{28}
+\indexentry{cache block|hyperpage}{28}
+\indexentry{cache line|hyperpage}{28}
+\indexentry{cache eviction|hyperpage}{28}
+\indexentry{cache replacement policy|hyperpage}{28}
+\indexentry{LRU replacement policy|hyperpage}{28}
+\indexentry{random replacement policy|hyperpage}{28}
+\indexentry{pseudo-LRU replacement policy|hyperpage}{28}
+\indexentry{fully-associative cache|hyperpage}{28}
+\indexentry{set-associative cache|hyperpage}{28}
+\indexentry{direct-mapped cache|hyperpage}{28}
+\indexentry{cache set|hyperpage}{28}
+\indexentry{cache coherency|hyperpage}{29}
+\indexentry{Flush+Reload|hyperpage}{29}
+\indexentry{Prime+Probe|hyperpage}{30}
+\indexentry{reset sequence|hyperpage}{30}
+\indexentry{trigger sequence|hyperpage}{30}
+\indexentry{measurement sequence|hyperpage}{30}
+\indexentry{Flush+Flush|hyperpage}{30}
+\indexentry{Flush+Prefetch|hyperpage}{30}
+\indexentry{Evict+Reload|hyperpage}{30}
+\indexentry{Evict+Time|hyperpage}{30}
+\indexentry{Reload+Refresh|hyperpage}{30}
+\indexentry{Collide+Probe|hyperpage}{30}
+\indexentry{timing attacks|hyperpage}{32}
