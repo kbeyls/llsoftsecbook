@@ -39,6 +39,44 @@
             urlcolor=Blue,
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -128,7 +166,7 @@ Commons, PO Box 1866, Mountain View, CA 94042, USA.
   Copyright 2021-2022 Arm Limited
   \href{mailto:open-source-office@arm.com}{\nolinkurl{open-source-office@arm.com}}\\
 
-Version 0-88-gdc59798
+Version 0-92-g34f7465
 \clearpage
 
 {
@@ -224,9 +262,9 @@ prefer feedback to be received through
 
 \missingcontent{Add section describing the structure of the rest of the book.}
 
-\hypertarget{memory-vulnerability-based-attacks-and-mitigations}{%
-\chapter{Memory vulnerability based attacks and
-mitigations}\label{memory-vulnerability-based-attacks-and-mitigations}}
+\hypertarget{memory-vulnerability-based-attacks}{%
+\chapter{Memory vulnerability based
+attacks}\label{memory-vulnerability-based-attacks}}
 
 \hypertarget{a-bit-of-background-on-memory-vulnerabilities}{%
 \section{A bit of background on memory
@@ -253,11 +291,11 @@ explicitly listing their types, which include:
 
 Memory vulnerabilities are an important class of vulnerabilities that
 arise due to these types of errors, and they most commonly occur due to
-programming mistakes when using languages such as C/C++. These languages
-do not provide mechanisms to protect against memory access errors by
-default. An attacker can exploit such vulnerabilities to leak sensitive
-data or overwrite critical memory locations and gain control of the
-vulnerable program.
+programming mistakes when using languages such as C/C++
+\index{C}\index{C++}. These languages do not provide mechanisms to
+protect against memory access errors by default. An attacker can exploit
+such vulnerabilities to leak sensitive data or overwrite critical memory
+locations and gain control of the vulnerable program.
 
 Memory vulnerabilities have a long history. The
 \href{https://en.wikipedia.org/wiki/Morris_worm}{Morris worm} in 1988
@@ -293,18 +331,18 @@ techniques such as bounds checking and automatic memory management. If
 these languages promise to eliminate memory vulnerabilities, why are we
 still discussing this topic?
 
-On the one hand, C and C++ remain very popular languages, particular in
-the implementation of low-level software. On the other hand, programs
-written in memory safe languages can themselves be vulnerable to memory
-errors as a result of bugs in how they are implemented, e.g.~a bug in
-their compiler. Can we fix the problem by also using memory safe
-languages for the compiler and runtime implementation? Even if that were
-as simple as it sounds, unfortunately there are types of programming
-errors that these languages cannot protect against. For example, a
-logical error in the implementation of a compiler or runtime for a
-memory safe language can lead to a memory access error not being
-detected. We will see examples of such logic errors in compiler
-optimizations in a
+On the one hand, C and C++ \index{C}\index{C++} remain very popular
+languages, particular in the implementation of low-level software. On
+the other hand, programs written in memory safe languages can themselves
+be vulnerable to memory errors as a result of bugs in how they are
+implemented, e.g.~a bug in their compiler. Can we fix the problem by
+also using memory safe languages for the compiler and runtime
+implementation? Even if that were as simple as it sounds, unfortunately
+there are types of programming errors that these languages cannot
+protect against. For example, a logical error in the implementation of a
+compiler or runtime for a memory safe language can lead to a memory
+access error not being detected. We will see examples of such logic
+errors in compiler optimizations in a
 \protect\hyperlink{jit-compiler-vulnerabilities}{later section}.
 
 Given the rich history of memory vulnerabilities and mitigations and the
@@ -668,7 +706,7 @@ string manipulation functions, even when the value is leaked.
 Many buffer overflow vulnerabilities result from the use of unsafe
 library functions, such as \texttt{gets}, or from the unsafe use of
 library functions such as \texttt{strcpy}. There is extensive literature
-on writing secure C/C++ code, for example (Seacord
+on writing secure C/C++\index{C}\index{C++} code, for example (Seacord
 \protect\hyperlink{ref-Seacord2013}{2013}) and (Dowd, McDonald, and
 Schuh \protect\hyperlink{ref-Dowd2006}{2006}). A different approach to
 limiting the effects of overflows is library function hardening, which
@@ -928,8 +966,8 @@ programming}\label{counterfeit-object-oriented-programming}}
 Counterfeit Object-oriented programming (COOP)\index{counterfeit
 object-oriented programming (COOP)} (Schuster et al.
 \protect\hyperlink{ref-Schuster2015}{2015}) is a code reuse technique
-that takes advantage of C++ virtual function calls. A COOP attack takes
-advantage of existing virtual functions and
+that takes advantage of C++ \index{C++} virtual function calls. A COOP
+attack takes advantage of existing virtual functions and
 \href{https://en.wikipedia.org/wiki/Virtual_method_table}{vtables}, and
 creates fake objects pointing to these existing vtables. The virtual
 functions used as gadgets in the attack are called vfgadgets. To chain
@@ -1038,7 +1076,8 @@ class-hierarchy analysis.
 CFI} includes a variety of forward-edge control-flow integrity checks.
 These include checking that the target of an indirect function call is
 an address-taken function of the correct type and checking that a C++
-virtual call happens on an object of the correct dynamic type.
+\index{C++} virtual call happens on an object of the correct dynamic
+type
 
 For example, assume we have a class \texttt{A} with a virtual function
 \texttt{foo} and a class \texttt{B} deriving from \texttt{A}, and that
@@ -1406,9 +1445,150 @@ them at their source: memory errors.
 \section{Preventing and detecting memory
 errors}\label{preventing-and-detecting-memory-errors}}
 
-\missingcontent{Describe various mechanisms for detecting memory errors, both
-software-based and hardware-based, e.g. Clang address sanitizer, PAuth-based
-pointer integrity schemes, MTE etc}
+We have so far discussed how languages that are
+\protect\hyperlink{a-bit-of-background-on-memory-vulnerabilities}{not
+memory safe}, like C and C++, are vulnerable to memory errors and
+therefore exploitation. In this section, we will discuss tools that are
+available to C/C++ \index{C}\index{C++}programmers to help them detect
+vulnerabilities that can lead to memory errors.
+
+\hypertarget{sanitizers}{%
+\subsection{Sanitizers}\label{sanitizers}}
+
+Sanitizers \index{sanitizers} are tools that detect bugs during program
+execution. Sanitizers usually have two components: a compiler
+instrumentation part that introduces the new checks, and a runtime
+library part. They are often too expensive to run in production mode, as
+they tend to increase execution time and memory usage. They are commonly
+used during testing of an application, frequently in combination with
+fuzzers\index{fuzzing}\footnote{\href{https://en.wikipedia.org/wiki/Fuzzing}{Fuzzing}
+  \index{fuzzing} is a powerful testing technique that relies on
+  automatically generating large amounts of random inputs to the program
+  under test.}.
+
+A very popular sanitizer is
+\href{https://clang.llvm.org/docs/AddressSanitizer.html}{Address
+Sanitizer} (ASan)\index{AddressSanitizer (ASan)}. It aims to detect
+various memory errors. These include out-of-bounds accesses,
+use-after-free, double-free and invalid free\footnote{ASan also includes
+  a \href{https://clang.llvm.org/docs/LeakSanitizer.html}{memory leak
+  detector} \index{LeakSanitizer}.}. There are Address Sanitizer
+implementations for both GCC \index{GCC} and Clang\index{Clang}, but we
+will focus on the Clang implementation here.
+
+ASan uses shadow memory\index{shadow memory} to keep track of the state
+of the application's memory. Each byte of shadow memory records
+information on 8 bytes of the application's memory. It represents how
+many of the 8 bytes are addressable. When none of the bytes are
+addressable, it encodes additional details (whether the 8 bytes are are
+out-of-bounds stack, out-of-bounds heap, freed memory, and so on).
+Requiring one byte of shadow memory for every 8 bytes of application
+memory means that ASan needs to reserve one-eighth of the application's
+virtual address space (Serebryany et al.
+\protect\hyperlink{ref-Serebryany2012}{2012}). Shadow memory is
+allocated in one contiguous chunk, which keeps mapping application
+memory to shadow memory simple.
+
+ASan's runtime library replaces memory allocation functions like
+\texttt{malloc}\index{malloc} and \texttt{free}\index{free} with its own
+specialized versions. \texttt{malloc} introduces redzones\index{redzone}
+before and after each allocation, which are marked as unaddressable.
+\texttt{free} marks the entire allocation as unaddressable and places it
+in quarantine, so that it doesn't get reallocated for a while (in a FIFO
+basis). This allows for detecting use-after-free. The runtime library
+also handles management of the shadow memory.
+
+ASan's code instrumentation in the compiler introduces redzones around
+each stack array allocation, and around globals. It then instruments
+loads and stores to check whether the accessed memory is addressable,
+based on the information stored in the shadow memory, and reports an
+error if unaddressable memory is accessed.
+
+ASan doesn't produce false positives and is easy to use. It requires
+compiling and linking a program with the \texttt{-fsanitize=address}
+option. It is used in practice for testing
+\href{https://chromium.googlesource.com/chromium/src/+/HEAD/docs/asan.md}{large
+projects}. There is a similar tool for dynamic memory error detection in
+the Linux kernel,
+\href{https://www.kernel.org/doc/html/v5.0/dev-tools/kasan.html}{KASAN}\index{KASAN}.
+
+ASan's biggest drawback is its high runtime overhead and memory usage,
+due to the quarantine, redzones and shadow memory.
+\href{https://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html}{Hardware-assisted
+AddressSanitizer (HWASAN)} \index{HWASAN} works similarly to ASan, but
+with partial hardware assistance can result in lower memory overheads,
+at the cost of being less portable.
+
+On AArch64\index{AArch64}, HWASAN uses Top-Byte Ignore
+(TBI)\index{Top-Byte
+Ignore (TBI)}. When TBI is enabled, the top byte of a pointer is ignored
+when performing a memory access, allowing software to use that top byte
+to store metadata, without affecting execution. Each allocation is
+aligned to 16 bytes and each 16-byte chunk of memory (called
+``granule'') is randomly assigned an 8-bit tag. The tag is stored in
+shadow memory and is also placed in the top byte of the pointer to the
+object. Memory loads and stores are then instrumented to check that the
+tag stored in the pointer matches the tag stored in memory, and report
+an error when a mismatch happens.
+\todo{Add diagram to demonstrate how HWASAN works.}
+
+For granules shorter than 16 bytes, the value stored in shadow memory is
+not the actual tag, but the length of the granule. The actual tag is
+stored at the last byte of the granule itself. For tags in shadow memory
+with values between 1 and 15, HWASAN checks that the access is within
+the bounds of the granule and the pointer tag matches the tag stored at
+the last byte of the granule.
+
+HWASAN is also easy to use, and simply requires compiling and linking an
+application with the \texttt{-fsanitize=hwaddress} flag.
+
+\href{https://llvm.org/docs/MemTagSanitizer.html}{MemTagSanitizer}\index{MemTagSanitizer}
+goes one step further and uses the Armv8.5-A
+\href{https://developer.arm.com/documentation/102925/0100}{Memory
+Tagging Extension (MTE)}\index{Memory
+Tagging Extension (MTE)}. With MTE, the tag checking is done
+automatically by hardware, and an exception is raised on mismatch. MTE's
+granule size is 16 bits, whereas tags are 4-bit.
+
+\missingcontent{Consider adding a whole section on MTE and its applications}
+
+\href{https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html\#ubsan-checks}{UndefinedBehaviorSanitizer
+(UBSan)} \index{UBSan}detects undefined behavior during program
+execution, for example array out-of-bounds accesses for statically
+determined array bounds, null pointer dereference, signed integer
+overflow and various kinds of integer conversions that result in data
+loss. Although some of these checks are not directly related to memory
+errors, these kinds of errors can lead to incorrect pointer arithmetic,
+incorrect allocation sizes, and other issues that lead to memory errors,
+so it is important to detect them and address them.
+
+UBSan's documentation describes the full list of available checks. The
+majority of these checks are enabled with the
+\texttt{-fsanitize=undefined} flag, but there are also other useful
+groupings of checks, for example \texttt{-fsanitize=integer} for checks
+related to integer conversions and arithmetic.
+
+There are many other sanitizers, more than can reasonably be covered in
+this section. For the interested reader, we list a few more:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://clang.llvm.org/docs/MemorySanitizer.html}{MemorySanitizer}\index{MemorySanitizer}:
+  detects uninitialized reads.
+\item
+  \href{https://clang.llvm.org/docs/ThreadSanitizer.html}{ThreadSanitizer}\index{ThreadSanitizer}:
+  detects data races.
+\item
+  \href{https://llvm.org/docs/GwpAsan.html}{GWP-ASan}\index{GWP-ASan}:
+  detects use-after-free and heap buffer overflows, with low overhead
+  that makes it suitable for production environments. It performs checks
+  only on a sample of allocations.
+\end{itemize}
+
+\missingcontent{Describe other mechanisms for detecting memory errors, both
+software-based (static analysis, library and buffer hardening) and
+hardware-based, e.g. PAuth-based pointer integrity schemes, MTE etc}
 
 \hypertarget{jit-compiler-vulnerabilities}{%
 \section{JIT compiler
@@ -1786,7 +1966,7 @@ value is generally avoided. An alternative mitigation is to always
 access all array indices, independent of the secret value, e.g.~as done
 in
 \href{https://git.tartarus.org/?p=simon/putty.git;a=commitdiff;h=46fbe375bf}{commit
-46fbe375} to the Putty project, which contains this comment:
+46fbe375} to the PuTTY project, which contains this comment:
 
 \begin{quote}
 \begin{verbatim}
@@ -1884,6 +2064,150 @@ predictors}\label{channels-making-use-of-aliasing-in-branch-predictors-and-other
 \hypertarget{transient-execution-attacks}{%
 \section{Transient execution
 attacks}\label{transient-execution-attacks}}
+
+\hypertarget{transient-execution}{%
+\subsection{Transient execution}\label{transient-execution}}
+
+CPUs execute sequences of instructions. There often are dependencies
+between instructions in the sequence. That means that the outcome of one
+instruction influences the execution of a later instruction.
+
+Apart from the smallest micro-controllers, all CPUs execute multiple
+instructions in parallel. Sometimes even multiple hundreds of them at
+the same time, all in various stages of execution. In other words,
+instructions start executing while potentially hundreds of previous
+instructions haven't produced their results yet. How can a CPU achieve
+this when the output of a previous instruction, which might not have
+fully executed yet, and hence whose output may not yet be ready, may
+affect the execution of that later instruction?
+
+In other words, there may be a dependency between an instruction that
+has not finished yet and a later instruction that the CPU also already
+started executing. There are various kinds of dependencies. One kind is
+\emph{control dependencies}\index{control dependencies}, where whether
+the later instruction should be executed at all is dependent on the
+outcome of the earlier instruction. Other kinds are \emph{true data
+dependencies}\index{true data
+dependency}, \emph{anti-dependencies}\index{anti dependency} and
+\emph{output dependencies}\index{output dependency}. More details about
+these kinds of dependencies can be found on
+\href{https://en.wikipedia.org/wiki/Data_dependency}{the wikipedia page
+about them}.
+
+CPUs overcome parallel execution limitations imposed by dependencies by
+making massive numbers of \emph{predictions}\index{prediction}. For
+example, most CPUs predict whether conditional branches are taken or
+not, which is making a prediction on control dependencies. Another
+example is a CPU making a prediction on whether a load accesses the same
+memory address as a preceding store. If they do not access the same
+memory locations, the load can run in parallel with the store, as there
+is no data dependency between them. If they do access overlapping memory
+locations, there is a dependency and the store should complete before
+the load can start executing.
+
+Starting to execute later instructions before all of their dependencies
+have been resolved, based on the predictions, is called
+\emph{speculation}\index{speculation}.
+
+\begin{description}
+\item[Let's illustrate that with the following example]
+The following C code
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{long}\NormalTok{ abs(}\DataTypeTok{long}\NormalTok{ a) \{}
+  \ControlFlowTok{if}\NormalTok{ (a>=}\DecValTok{0}\NormalTok{)}
+    \ControlFlowTok{return}\NormalTok{ a;}
+  \ControlFlowTok{else}
+    \ControlFlowTok{return}\NormalTok{ -a;}
+\NormalTok{  \}}
+\end{Highlighting}
+\end{Shaded}
+
+can be translated to the following AArch64 assembly code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+        \BuiltInTok{cmp}\NormalTok{     x0, #}\DecValTok{0}
+\NormalTok{        b.ge    Lbb2}
+\FunctionTok{Lbb1:}
+        \BuiltInTok{neg}\NormalTok{     x0, x0}
+\FunctionTok{Lbb2:}
+        \BuiltInTok{ret}
+\end{Highlighting}
+\end{Shaded}
+
+The \texttt{b.ge} instruction is a conditional branch instruction. It
+computes whether the next instruction should be the one immediately
+after, or the one pointed to by label \texttt{Lbb2}. In case it's the
+instruction immediately after, the branch is said to not be taken.
+Instead, if it's the instruction pointed to be label \texttt{Lbb2}, the
+branch is said to be taken. When the condition \texttt{.ge} (greater or
+equal) is true, the branch is taken. That condition is defined or set by
+the previous instruction, the \texttt{cmp\ x0,\ \#0} instruction, which
+compares the value in register \texttt{x0} with 0. Therefore, there is a
+dependency between the \texttt{cmp} instruction and the \texttt{b.ge}
+instruction. To overcome this dependency, and be able to execute the
+\texttt{cmp}, \texttt{b.ge} and potentially more instructions in
+parallel, the CPU predicts the outcome of the branch instruction. In
+other words, it predicts whether the branch is taken or not. The CPU
+will pick up either the \texttt{neg} or the \texttt{ret} instruction to
+start executing next. This is called \emph{speculation}, as the CPU
+\emph{speculatively executes} either instruction \texttt{neg}, or
+\texttt{ret}.
+\end{description}
+
+\todo{Show a second example of cpu speculation that is not based on
+branch prediction.}
+
+Of course, as with all predictions, the CPU gets the prediction wrong
+from time to time. In that case, all changes to the system state that
+affect the correct execution of the program need to be undone. In the
+above example, if the branch should have been taken, but the CPU
+predicted it to not be taken, the \texttt{neg} instruction is executed
+incorrectly and changes the value in register \texttt{x0}. After
+discovering the branch was mis-predicted, the CPU would have to restore
+the correct, non-negated, value in register \texttt{x0}.
+
+Any instructions that are executed under so-called
+\emph{mis-speculation}\index{mis-speculation}, are called
+\emph{transient instructions}\index{transient instructions}.
+
+The paragraph above says ``\emph{the system state that affects the
+correct execution of the program, needs to be undone}''. There is a lot
+of system state that does not affect the correct execution of a program.
+And the changes to such system state by transient instructions is often
+not undone.
+
+For example, a transient load instruction can fetch a value into the
+cache that was not there before. By bringing that value in the cache, it
+could have evicted another value from the cache. Whether a value is
+present in the cache does not influence the correct execution of a
+program; it merely influences its execution speed. Therefore, the effect
+of transient execution on the content of the cache is typically not
+undone when detecting mis-speculation.
+
+Sometimes, it is said that the \emph{architectural
+effects}\index{architectural
+effects} of transient instructions need to be undone, but the
+\emph{micro-architectural effects}\index{micro-architectural effects} do
+not need to be undone.
+
+The above explanation describes architectural effects as changes in
+system state that need to be undone after detecting mis-speculation. In
+reality, most systems will implement techniques that keep all state
+changes in micro-architectural buffers until it is clear that all
+predictions made to execute that instruction were correct. At that point
+the micro-architectural state is \emph{committed} to become
+architectural state. In that way, mis-predictions naturally do not
+affect architectural state.
+\todo{Could we find a good reference that explains
+micro-architectural versus architectural state in more detail? Is "Computer
+Architecture: A Quantitative Approach" the best reference available?}
+
+\emph{Transient execution attacks}\index{transient execution attacks}
+are a category of side-channel attacks that use the micro-architectural
+side-effects of transient execution as a side channel.
 
 \missingcontent{Write section on transient execution attacks}
 
@@ -2522,6 +2846,12 @@ Springer.
 \leavevmode\hypertarget{ref-Seacord2013}{}%
 Seacord, Robert C. 2013. \emph{Secure Coding in c and C++}. 2nd ed.
 Addison-Wesley Professional.
+
+\leavevmode\hypertarget{ref-Serebryany2012}{}%
+Serebryany, Konstantin, Derek Bruening, Alexander Potapenko, and Dmitriy
+Vyukov. 2012. ``\(\{\)AddressSanitizer\(\}\): A Fast Address Sanity
+Checker.'' In \emph{2012 Usenix Annual Technical Conference (Usenix Atc
+12)}, 309--18.
 
 \leavevmode\hypertarget{ref-Serna2012}{}%
 Serna, Fermin J. 2012. ``The Info Leak Era on Software Exploitation.''
