@@ -25,6 +25,11 @@ h3:hover a, h2:active a {
   visibility: visible;
 }
 
+/* only show TOC 2 levels deep: */
+#TOC ul ul ul {
+  display: none;
+}
+
 /* make the main content start under the fixed top navbar */
 body { padding-top: 70px; }
 /* when clicking a link, make sure that the link appears
