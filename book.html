@@ -136,8 +136,8 @@ height: calc(100vh - 56px);
 
 :root {
 
---sidenote-width: calc(min(23vw, 376px));
---sidenote-col-width: calc(min(25vw, 400px)); 
+--sidenote-width: calc(min(23%, 376px));
+--sidenote-col-width: calc(min(25%, 400px)); 
 }
 .sidenote, .todo, .missingcontent {
 float: right; 
@@ -169,8 +169,8 @@ display: none;
 @media (max-width: 767px) {
 :root {
 
---toc-sidebar-max-width: 100vw;
---main-content-max-width: calc(min(100vw, 576px)); 
+--toc-sidebar-max-width: 100%;
+--main-content-max-width: calc(min(100%, 576px)); 
 
 --sidenote-col-width: 0px;
 }
@@ -187,23 +187,23 @@ font-size: 80%;
 @media (min-width: 768px) {
 :root {
 
---toc-sidebar-max-width: 100vw;
---main-content-max-width: calc(min(100vw, 576px)); 
+--toc-sidebar-max-width: 100%;
+--main-content-max-width: calc(min(100%, 576px)); 
 }
 }
 
 @media (min-width: 1200px) {
 :root {
 
---toc-sidebar-max-width: calc(min(25vw, 576px));
+--toc-sidebar-max-width: calc(min(25%, 576px));
 
---main-content-max-width: calc(min(75vw, 576px));
+--main-content-max-width: calc(min(75%, 576px));
 }
 #main-content-col:not(.without-tocsidebar) {
-max-width: calc(100vw - var(--toc-sidebar-max-width));
+max-width: calc(100% - var(--toc-sidebar-max-width));
 }
 #main-content-col .without-tocsidebar {
-max-width: 100vw;
+max-width: 100%;
 }
 }
 #toc-sidebar {
@@ -318,7 +318,7 @@ cursor: pointer;
   <p>
       Copyright 2021-2022 Arm Limited <a href="mailto:open-source-office@arm.com" class="email">open-source-office@arm.com</a><br />
     </p>
-  <p>Version: 0-120-g74d6119</p>
+  <p>Version: 0-123-gcf87fd6</p>
 </header>
 
 <main id="content">
@@ -1169,9 +1169,14 @@ side-channel attacks&#39; higher-up</span>
     jQuery("#toc-sidebar a").addClass("link-secondary");
 
     // Needed to enable the bootstrap tooltips:
-    let tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    let tooltipList = [...tooltipTriggerList].map(
-      tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, {trigger : 'hover'}));
+    let isTouchScreen = "ontouchstart" in document.documentElement;
+    if (!isTouchScreen) {
+      let tooltipTriggerList =
+        document.querySelectorAll('[data-bs-toggle="tooltip"]');
+      let tooltipList = [...tooltipTriggerList].map(
+        tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl,
+                                                  {trigger : 'hover'}));
+    }
 
     // Make sidenotes toggleable:
     jQuery('.sidenote_ref').click(function(){
