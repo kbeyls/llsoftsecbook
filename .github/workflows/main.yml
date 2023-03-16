@@ -16,6 +16,12 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: compute docker container version
+      id: container-vars
+      shell: bash
+      run: |
+        echo "::set-output name=docker_sha::$(git log -n1 --format=format:%h -- docker)"
+
     - name: build
       run: ./build_with_docker.sh
 
