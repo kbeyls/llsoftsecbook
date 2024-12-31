@@ -5,7 +5,7 @@ Pandoc
           [ ( "SPDX-License-Identifier"
             , MetaInlines [ Str "CC-BY-4.0" ]
             )
-          , ( "VERSION" , MetaString "0-188-g8f96358" )
+          , ( "VERSION" , MetaString "0-202-g9ec4fa7" )
           , ( "bibliography"
             , MetaList [ MetaInlines [ Str "book.bib" ] ]
             )
@@ -19999,15 +19999,15 @@ Pandoc
       , SoftBreak
       , Link
           ( "" , [] , [] )
-          [ Quoted DoubleQuote [ Str "safe" , Space , Str "libc++" ]
-          , SoftBreak
-          , Str "mode"
+          [ Str "libc++"
+          , Space
+          , Str "hardening"
+          , Space
+          , Str "modes"
           ]
-          ( "https://libcxx.llvm.org/UsingLibcxx.html#enabling-the-safe-libc-mode"
-          , ""
-          )
+          ( "https://libcxx.llvm.org/Hardening.html" , "" )
       , SoftBreak
-      , Str "enables"
+      , Str "enable"
       , Space
       , Str "a"
       , Space
@@ -30085,9 +30085,16 @@ Pandoc
       , Space
       , Str "the"
       , Space
-      , Str "BTB"
-      , RawInline (Format "tex") "\\index{BTB}"
+      , Str "Branch"
       , Space
+      , Str "Target"
+      , Space
+      , Str "Buffer"
+      , Space
+      , Str "(BTB"
+      , RawInline (Format "tex") "\\index{BTB}"
+      , Str ")"
+      , SoftBreak
       , Str "with"
       , Space
       , Str "a"
@@ -30097,13 +30104,13 @@ Pandoc
       , Str "branch"
       , Space
       , Str "in"
-      , SoftBreak
+      , Space
       , Str "the"
       , Space
       , Str "victim"
       , Space
       , Str "process."
-      , Space
+      , SoftBreak
       , Str "They"
       , Space
       , Str "use"
@@ -30297,8 +30304,14 @@ Pandoc
       , Space
       , Str "the"
       , Space
-      , Str "RSB,"
+      , Str "Return"
       , Space
+      , Str "Stack"
+      , Space
+      , Str "Buffer"
+      , Space
+      , Str "(RSB),"
+      , SoftBreak
       , Str "by"
       , Space
       , Str "measuring"
@@ -30306,7 +30319,7 @@ Pandoc
       , Str "the"
       , Space
       , Str "number"
-      , SoftBreak
+      , Space
       , Str "of"
       , Space
       , Math InlineMath "N"
@@ -30318,7 +30331,7 @@ Pandoc
       , Str "get"
       , Space
       , Str "mis-predicted."
-      , Space
+      , SoftBreak
       , Str "If"
       , Space
       , Str "the"
@@ -31302,7 +31315,7 @@ Pandoc
       ]
   , CodeBlock
       ( "" , [ "c" ] , [] )
-      "long abs(long a) {\n  if (a>=0)\n    return a;\n  else\n    return -a;\n  }"
+      "long abs(long a) {\n  if (a >= 0)\n    return a;\n  else\n    return -a;\n}"
   , Para
       [ Str "can"
       , Space
@@ -41470,30 +41483,33 @@ Pandoc
       , Space
       , Str "paper"
       , Space
-      , Quoted
-          DoubleQuote
-          [ Str "Fault"
-          , Space
-          , Str "Attacks"
-          , Space
-          , Str "on"
-          , Space
-          , Str "Secure"
-          , Space
-          , Str "Embedded"
-          , Space
-          , Str "Software:"
-          , Space
-          , Str "Threats,"
-          , Space
-          , Str "Design"
-          , SoftBreak
-          , Str "and"
-          , Space
-          , Str "Evaluation"
+      , Link
+          ( "" , [] , [] )
+          [ Quoted
+              DoubleQuote
+              [ Str "Fault"
+              , Space
+              , Str "Attacks"
+              , Space
+              , Str "on"
+              , Space
+              , Str "Secure"
+              , Space
+              , Str "Embedded"
+              , Space
+              , Str "Software:"
+              , Space
+              , Str "Threats,"
+              , Space
+              , Str "Design"
+              , SoftBreak
+              , Str "and"
+              , Space
+              , Str "Evaluation"
+              ]
           ]
-      , Space
-      , Str "(https://arxiv.org/pdf/2003.10513.pdf),"
+          ( "https://arxiv.org/pdf/2003.10513.pdf" , "" )
+      , Str ","
       , Space
       , Str "where"
       , Space
@@ -41787,17 +41803,19 @@ Pandoc
   , Para
       [ Str "Example:"
       , Space
-      , Str "Attack"
-      , Space
-      , Str "on"
-      , Space
-      , Str "TrustZone"
-      , Space
-      , Str "for"
-      , Space
-      , Str "Armv8-M:"
-      , Space
-      , Str "https://www.youtube.com/watch?v=4u6BAH8mEDw"
+      , Link
+          ( "" , [] , [] )
+          [ Str "Attack"
+          , Space
+          , Str "on"
+          , Space
+          , Str "TrustZone"
+          , Space
+          , Str "for"
+          , Space
+          , Str "Armv8-M"
+          ]
+          ( "https://www.youtube.com/watch?v=4u6BAH8mEDw" , "" )
       ]
   , Para
       [ Str "There"
