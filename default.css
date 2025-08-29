@@ -245,3 +245,57 @@ figure img + figcaption {
   display: block;
   text-align: center;
 }
+
+.definition {
+  border-left: 4px solid #5B8FF9;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  background-color: #f7faff;
+}
+.definition > .caption {
+  display: block;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 0.4em;
+}
+
+.example {
+  border-left: 4px solid #f7db5e;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  background-color: #f7faff;
+}
+.example > .caption {
+  font-style: italic;
+}
+/*.example > .caption::before {
+  content: ": ";
+}*/
+
+.index-entry-list {
+  background-color:rgb(239, 239, 239);
+  column-count: 2;
+  column-gap: 1.5rem;
+}
+
+.index-entry {
+  display: block;
+}
+
+.index-entry-indentation {
+  display: inline-block;
+  width: 1em;
+}
+
+.index-entry-locator {
+  margin-left: auto;
+}
+
+.index-entry-locator a {
+  text-decoration: none;
+  color: #5B8FF9;
+}
+
+/*.index-entry-text::after {
+  content: ", "
+}*/
